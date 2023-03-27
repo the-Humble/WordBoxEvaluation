@@ -1,13 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Model;
 using UnityEngine;
 using Zenject;
 
 public class FriendListViewer : MonoBehaviour
 {
-    [SerializeField]
     private GameObject _friendViewPrefab;
 
     [Inject]
@@ -21,7 +17,7 @@ public class FriendListViewer : MonoBehaviour
         int cardID = 0;
         foreach (PersonModel person in peopleModel.results)
         {
-            FriendPanel friendPanel = GameObject.Instantiate(_friendViewPrefab, transform).GetComponent<FriendPanel>();
+            FriendPanel friendPanel = Instantiate(_friendViewPrefab, transform).GetComponent<FriendPanel>();
             friendPanel.Initialize(cardID, person);
         }
     }

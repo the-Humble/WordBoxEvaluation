@@ -12,8 +12,7 @@ public class FriendPanel : MonoBehaviour
     public RawImage _rawImage;
     public TextMeshProUGUI _textBox;
     public Button _likeButton;
-    
-    
+
     public void Initialize(int id, PersonModel person)
     {
         ID = id;
