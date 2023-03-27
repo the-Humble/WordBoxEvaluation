@@ -9,11 +9,13 @@ using UnityEngine.UI;
 public class FriendPanel : MonoBehaviour
 {
     public int ID { get; private set; }
-    private PersonModel _personModel;
+    public PersonModel _personModel;
     public RawImage _rawImage;
     public TextMeshProUGUI _textBox;
     public Button _likeButton;
 
+    public Texture _friendImage;
+    
     public PersonModelEvent _inspectSpecificFriend;
     
     public void Initialize(int id, PersonModel person)
@@ -38,6 +40,10 @@ public class FriendPanel : MonoBehaviour
 
     public void InspectSpecificFriend()
     {
+        if (_personModel == null)
+        {
+            return;
+        }
         _inspectSpecificFriend.Invoke(_personModel);
     }
 }
