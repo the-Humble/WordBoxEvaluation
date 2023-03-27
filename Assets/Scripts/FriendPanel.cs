@@ -9,15 +9,19 @@ using UnityEngine.UI;
 public class FriendPanel : MonoBehaviour
 {
     public int ID { get; private set; }
+    private PersonModel _personModel;
     public RawImage _rawImage;
     public TextMeshProUGUI _textBox;
     public Button _likeButton;
 
+    public PersonModelEvent _inspectSpecificFriend;
+    
     public void Initialize(int id, PersonModel person)
     {
         ID = id;
-        StartCoroutine(DownloadImage(person.picture.large));
-        _textBox.text = person.name.first + " " + person.name.last;
+        _personModel = person;
+        StartCoroutine(DownloadImage(_personModel.picture.large));
+        _textBox.text = _personModel.name.first + " " + _personModel.name.last;
     }
     
     IEnumerator DownloadImage(string imageURL)
@@ -30,5 +34,10 @@ public class FriendPanel : MonoBehaviour
             else
                 _rawImage.texture = ((DownloadHandlerTexture) request.downloadHandler).texture;
         }
-    } 
+    }
+
+    public void InspectSpecificFriend()
+    {
+        _inspectSpecificFriend.Invoke(_personModel);
+    }
 }
