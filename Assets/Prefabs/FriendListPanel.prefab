@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rawImage: {fileID: 652956237248535584}
   _textBox: {fileID: 8693148725994147294}
-  _likeButton: {fileID: 5180883216059070611}
+  _likeButton: {fileID: 0}
 --- !u!1 &6704284028296112203
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 5699594409989870572}
   - component: {fileID: 400152174614505666}
   - component: {fileID: 6401325398134705037}
-  - component: {fileID: 5180883216059070611}
   - component: {fileID: 1555416975157234378}
+  - component: {fileID: 4627408022711265477}
+  - component: {fileID: 8153246059397104702}
   m_Layer: 5
   m_Name: LikeButton
   m_TagString: Untagged
@@ -200,7 +201,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5180883216059070611
+--- !u!114 &1555416975157234378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704284028296112203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: 75
+  m_MinHeight: 75
+  m_PreferredWidth: 75
+  m_PreferredHeight: 75
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!114 &4627408022711265477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704284028296112203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9399afd6a482ace47bc58fc0a90a9bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isLiked: 0
+  _likedImage: {fileID: 21300000, guid: 6c31b4c46e179df46b5d45df4fbe1abd, type: 3}
+  _notLikedImage: {fileID: 21300000, guid: 3a7a62693354b4c47bf5b36d70925ea4, type: 3}
+--- !u!114 &8153246059397104702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,7 +255,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -243,27 +279,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6401325398134705037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1555416975157234378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6704284028296112203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: 75
-  m_MinHeight: 75
-  m_PreferredWidth: 75
-  m_PreferredHeight: 75
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
+      m_Calls:
+      - m_Target: {fileID: 4627408022711265477}
+        m_TargetAssemblyTypeName: LikeButton, Assembly-CSharp
+        m_MethodName: toggleLiked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8169016093011650447
 GameObject:
   m_ObjectHideFlags: 0
