@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4575606019190781512}
   - component: {fileID: 3776811464294891272}
   - component: {fileID: 3832374519783650123}
+  - component: {fileID: 3046384706054946298}
   m_Layer: 5
   m_Name: FriendListPanel
   m_TagString: Untagged
@@ -106,6 +107,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3046384706054946298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287013564230029110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c82e4de139f4ff4fbc0b2a178bce335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rawImage: {fileID: 652956237248535584}
+  _textBox: {fileID: 8693148725994147294}
+  _likeButton: {fileID: 5180883216059070611}
 --- !u!1 &6704284028296112203
 GameObject:
   m_ObjectHideFlags: 0

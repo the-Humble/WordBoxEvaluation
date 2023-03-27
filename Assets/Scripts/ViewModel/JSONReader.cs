@@ -8,6 +8,8 @@ public class JSONReader : MonoBehaviour
 {
     private string _jsonURL = "https://randomuser.me/api/?results=50";
 
+    [SerializeField] private PeopleModelEvent _peopleDataRetrieved;
+    
     private void Start()
     {
         StartCoroutine(getJsonData(_jsonURL));
@@ -35,15 +37,8 @@ public class JSONReader : MonoBehaviour
                 case UnityWebRequest.Result.Success:
                     string jsonData = webRequest.downloadHandler.text;
                     Debug.Log(":\nReceived: " + jsonData);
-
                     PeopleModel people = JsonUtility.FromJson<PeopleModel>(jsonData);
-
-                    foreach (PersonModel person in people.results)
-                    {
-                        
-                    }
-                        
-                    
+                    _peopleDataRetrieved.Invoke(people);
                     break;
             }
         }
